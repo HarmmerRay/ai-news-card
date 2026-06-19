@@ -143,7 +143,17 @@ const CSS = fs.readFileSync(path.join(__dirname, '..', 'templates', 'base.html')
 
 // ============ 主流程 ============
 async function generate(newsItem, outputDir, styleList) {
-  const browser = await chromium.launch();
+  let browser;
+  try {
+    browser = await chromium.launch();
+  } catch (e) {
+    console.error('\n❌ 无法启动 Playwright Chromium 浏览器');
+    console.error('请运行以下命令安装浏览器：\n');
+    console.error('  npx playwright install chromium\n');
+    console.error('或如果你通过 npm 安装的本包：\n');
+    console.error('  cd node_modules/ai-news-card && npx playwright install chromium\n');
+    process.exit(1);
+  }
   const context = await browser.newContext({
     viewport: { width: CARD_W, height: CARD_H },
     deviceScaleFactor: 2,
