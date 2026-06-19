@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+  body { font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif; }
+
+  /* ========== 抖音风：清新蓝 科技/睿智 ========== */
+  .douyin-summary {
+    width: 1080px; height: 1440px;
+    background: linear-gradient(180deg, #f0f7ff 0%, #e0effe 50%, #e8f0fe 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 160px 100px;
+    position: relative; overflow: hidden;
+  }
+  .douyin-summary::before {
+    content: ''; position: absolute;
+    top: -20%; right: -15%;
+    width: 70%; height: 70%;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 60%);
+  }
+  .douyin-summary::after {
+    content: ''; position: absolute;
+    bottom: -20%; left: -15%;
+    width: 60%; height: 60%;
+    background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 60%);
+  }
+  .douyin-summary .text {
+    font-size: 56px; line-height: 2.1;
+    color: #1e3a5f; font-weight: 400;
+    letter-spacing: 2px;
+    position: relative; z-index: 1;
+    text-align: justify;
+  }
+
+  .douyin-critique {
+    width: 1080px; height: 1440px;
+    background: linear-gradient(180deg, #dbeafe 0%, #c7d2fe 50%, #e0e7ff 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start;
+    padding: 220px 100px 120px;
+    position: relative; overflow: hidden;
+  }
+  .douyin-critique::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 100%;
+    background: radial-gradient(ellipse at 50% 25%, rgba(96,165,250,0.15) 0%, transparent 55%);
+  }
+  .douyin-critique .badge {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 40px; font-weight: 700;
+    color: #1e3a5f; letter-spacing: 8px;
+    margin-bottom: 80px;
+    padding: 16px 52px;
+    background: rgba(37,99,235,0.1);
+    border-radius: 100px;
+    position: relative; z-index: 1;
+  }
+  .douyin-critique .badge svg {
+    width: 36px; height: 36px;
+    color: #eab308; /* 深黄色 */
+  }
+  .douyin-critique .text {
+    font-size: 56px; line-height: 1.65;
+    color: #1e3a5f; font-weight: 500;
+    text-align: center;
+    position: relative; z-index: 1;
+    max-width: 880px;
+  }
+  .douyin-critique .divider {
+    width: 80px; height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    border-radius: 2px; margin: 50px 0;
+    position: relative; z-index: 1;
+  }
+
+  /* ========== 小红书风：小清新 可爱 ========== */
+  .xhs-summary {
+    width: 1080px; height: 1440px;
+    background: linear-gradient(180deg, #fffbf5 0%, #fff5f8 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 160px 100px;
+    position: relative; overflow: hidden;
+  }
+  .xhs-summary::before {
+    content: '🌿';
+    position: absolute; top: 50px; right: 60px;
+    font-size: 64px; opacity: 0.25;
+  }
+  .xhs-summary::after {
+    content: '✨';
+    position: absolute; bottom: 60px; left: 60px;
+    font-size: 56px; opacity: 0.2;
+  }
+  .xhs-summary .text {
+    font-size: 56px; line-height: 2.1;
+    color: #4a4a4a; font-weight: 400;
+    letter-spacing: 1.5px;
+    position: relative; z-index: 1;
+    text-align: justify;
+  }
+
+  .xhs-critique {
+    width: 1080px; height: 1440px;
+    background: linear-gradient(180deg, #fff0f3 0%, #fce7f3 50%, #fdf2f8 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start;
+    padding: 220px 100px 120px;
+    position: relative; overflow: hidden;
+  }
+  .xhs-critique::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 100%;
+    background: radial-gradient(ellipse at 50% 25%, rgba(244,114,182,0.12) 0%, transparent 55%);
+  }
+  .xhs-critique .badge {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 40px; font-weight: 700;
+    color: #ec4899; letter-spacing: 8px;
+    margin-bottom: 80px;
+    padding: 16px 52px;
+    background: rgba(236,72,153,0.1);
+    border-radius: 100px;
+    position: relative; z-index: 1;
+  }
+  .xhs-critique .badge svg {
+    width: 36px; height: 36px;
+    color: #f59e0b; /* 小红书用暖黄 */
+  }
+  .xhs-critique .text {
+    font-size: 56px; line-height: 1.65;
+    color: #6b4c5a; font-weight: 500;
+    text-align: center;
+    position: relative; z-index: 1;
+    max-width: 880px;
+  }
+  .xhs-critique .divider {
+    width: 80px; height: 4px;
+    background: linear-gradient(90deg, #f9a8d4, #fbbf24);
+    border-radius: 2px; margin: 50px 0;
+    position: relative; z-index: 1;
+  }
+</style>
+</head>
+<body>
+<!-- 内容由 JS 动态注入 -->
+</body>
+</html>
