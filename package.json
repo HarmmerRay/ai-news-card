@@ -1,0 +1,36 @@
+{
+  "name": "ai-news-card",
+  "version": "1.0.0",
+  "description": "📰 将 AI 新闻转化为精美的社交媒体卡片图片（抖音/小红书风格）",
+  "main": "scripts/generate.js",
+  "bin": {
+    "ai-news-card": "scripts/generate.js"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.js"
+  },
+  "keywords": [
+    "ai",
+    "news",
+    "card",
+    "image",
+    "generator",
+    "douyin",
+    "xiaohongshu",
+    "playwright",
+    "social-media"
+  ],
+  "author": "HarmmerRay",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HarmmerRay/ai-news-card.git"
+  },
+  "homepage": "https://github.com/HarmmerRay/ai-news-card",
+  "bugs": {
+    "url": "https://github.com/HarmmerRay/ai-news-card/issues"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}
