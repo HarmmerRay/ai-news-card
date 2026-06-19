@@ -49,7 +49,7 @@ function buildSummaryHTML(text, style) {
 
 function buildCritiqueHTML(text, style) {
   const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const badge = '锐评';
+  const badge = style === 'douyin' ? '锐评' : '小编评论';
   const icon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.09 12.97L11 13.93L11 22L19.91 11.03L13 10.07L13 2Z"/></svg>';
   return `<div class="${style}-critique">
     <div class="badge">${icon}<span>${badge}</span></div>
