@@ -4,15 +4,55 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
   body { font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif; }
+
+  /* ========== 品牌Header — AI最前线 ========== */
+  .brand-header {
+    position: absolute;
+    top: 52px; left: 52px;
+    z-index: 2;
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 44px 18px 24px;
+    border-radius: 100px;
+    font-size: 42px; font-weight: 900;
+    letter-spacing: 6px;
+  }
+  .brand-header .brand-icon {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .brand-header .brand-icon svg {
+    width: 40px; height: 40px;
+  }
+
+  /* 抖音品牌色 */
+  .brand-douyin {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(59,130,246,0.3);
+    color: #1e40af;
+  }
+  .brand-douyin .brand-icon svg { color: #fbbf24; }
+
+  /* 小红书品牌色 */
+  .brand-xhs {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(236,72,153,0.25);
+    color: #be185d;
+  }
+  .brand-xhs .brand-icon svg { color: #ec4899; }
+
+  /* ========== 装饰元素 ========== */
+  .deco { position: absolute; pointer-events: none; z-index: 0; }
 
   /* ========== 抖音风：清新蓝 科技/睿智 ========== */
   .douyin-summary {
     width: 1080px; height: 1440px;
     background: linear-gradient(180deg, #dbeafe 0%, #c7d2fe 50%, #e0e7ff 100%);
     display: flex; align-items: center; justify-content: center;
-    padding: 160px 100px;
+    padding: 180px 100px 160px;
     position: relative; overflow: hidden;
   }
   .douyin-summary::before {
@@ -20,9 +60,8 @@
     top: 0; left: 0; right: 0; height: 100%;
     background: radial-gradient(ellipse at 50% 25%, rgba(96,165,250,0.15) 0%, transparent 55%);
   }
-  .douyin-summary::after { display: none; }
   .douyin-summary .text {
-    font-size: 56px; line-height: 2.1;
+    font-size: 64px; line-height: 2.0;
     color: #1e3a5f; font-weight: 400;
     letter-spacing: 2px;
     position: relative; z-index: 1;
@@ -34,7 +73,7 @@
     background: linear-gradient(180deg, #dbeafe 0%, #c7d2fe 50%, #e0e7ff 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: flex-start;
-    padding: 220px 100px 120px;
+    padding: 200px 100px 120px;
     position: relative; overflow: hidden;
   }
   .douyin-critique::before {
@@ -54,10 +93,10 @@
   }
   .douyin-critique .badge svg {
     width: 36px; height: 36px;
-    color: #eab308; /* 深黄色 */
+    color: #eab308;
   }
   .douyin-critique .text {
-    font-size: 56px; line-height: 1.65;
+    font-size: 64px; line-height: 1.6;
     color: #1e3a5f; font-weight: 500;
     text-align: center;
     position: relative; z-index: 1;
@@ -75,7 +114,7 @@
     width: 1080px; height: 1440px;
     background: linear-gradient(180deg, #fff0f3 0%, #fce7f3 50%, #fdf2f8 100%);
     display: flex; align-items: center; justify-content: center;
-    padding: 160px 100px;
+    padding: 180px 100px 160px;
     position: relative; overflow: hidden;
   }
   .xhs-summary::before {
@@ -83,9 +122,8 @@
     top: 0; left: 0; right: 0; height: 100%;
     background: radial-gradient(ellipse at 50% 25%, rgba(244,114,182,0.12) 0%, transparent 55%);
   }
-  .xhs-summary::after { display: none; }
   .xhs-summary .text {
-    font-size: 56px; line-height: 2.1;
+    font-size: 64px; line-height: 2.0;
     color: #4a4a4a; font-weight: 400;
     letter-spacing: 1.5px;
     position: relative; z-index: 1;
@@ -97,7 +135,7 @@
     background: linear-gradient(180deg, #fff0f3 0%, #fce7f3 50%, #fdf2f8 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: flex-start;
-    padding: 220px 100px 120px;
+    padding: 200px 100px 120px;
     position: relative; overflow: hidden;
   }
   .xhs-critique::before {
@@ -117,10 +155,10 @@
   }
   .xhs-critique .badge svg {
     width: 36px; height: 36px;
-    color: #f59e0b; /* 小红书用暖黄 */
+    color: #f59e0b;
   }
   .xhs-critique .text {
-    font-size: 56px; line-height: 1.65;
+    font-size: 64px; line-height: 1.6;
     color: #6b4c5a; font-weight: 500;
     text-align: center;
     position: relative; z-index: 1;
