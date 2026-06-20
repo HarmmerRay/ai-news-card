@@ -291,17 +291,18 @@ async function generate(newsItem, outputDir, styleList) {
       const html = buildSummaryHTML(summaryPages[i], style, newsItem.date);
       await page.evaluate((h) => { document.body.innerHTML = h; }, html);
       await page.waitForTimeout(200);
-      const filename = `${styleName}-summary-${i + 1}.png`;
+      const filename = `${styleName}-${i + 1}.png`;
       await page.screenshot({ path: path.join(outputDir, filename), type: 'png' });
       results.push(filename);
       console.log(`  ✅ ${filename}`);
     }
 
-    // 2. 点评 → 单页
+    // 2. 点评 → 单页（编号在概述之后，确保排序在最后）
     const critiqueHTML = buildCritiqueHTML(newsItem.critique, style, newsItem.date);
     await page.evaluate((h) => { document.body.innerHTML = h; }, critiqueHTML);
     await page.waitForTimeout(200);
-    const critiqueFile = `${styleName}-critique.png`;
+    const critiqueNum = summaryPages.length + 1;
+    const critiqueFile = `${styleName}-${critiqueNum}-critique.png`;
     await page.screenshot({ path: path.join(outputDir, critiqueFile), type: 'png' });
     results.push(critiqueFile);
     console.log(`  ✅ ${critiqueFile}`);
